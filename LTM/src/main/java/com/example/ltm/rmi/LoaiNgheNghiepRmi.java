@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface LoaiNgheNghiepRmi extends Remote {
-    List<LoaiNgheNghiep> getAll() throws RemoteException;
+    List<LoaiNgheNghiep> getAll() throws RemoteException;///
     void deleteById(Long id) throws RemoteException;
     List<LoaiNgheNghiep> saveAll(List<LoaiNgheNghiep> list) throws RemoteException;
     void updateById(LoaiNgheNghiep loaiNgheNghiep) throws RemoteException;
