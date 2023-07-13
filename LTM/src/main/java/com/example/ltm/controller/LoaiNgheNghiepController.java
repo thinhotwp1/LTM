@@ -1,6 +1,7 @@
 package com.example.ltm.controller;
 
-import com.example.ltm.Service.LoaiNgheNghiepService;
+import com.example.ltm.model.NgheNghiep;
+import com.example.ltm.service.LoaiNgheNghiepService;
 import com.example.ltm.model.LoaiNgheNghiep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,5 +32,9 @@ public class LoaiNgheNghiepController {
     @PostMapping("/save-all")
     public List<LoaiNgheNghiep> deleteloaiNgheNghiepById(@RequestBody List<LoaiNgheNghiep> list) {
         return loaiNgheNghiepService.saveAll(list);
+    }
+    @PostMapping("/update-by-id")
+    public void updateNgheNghiepById(LoaiNgheNghiep loaiNgheNghiep) {
+        loaiNgheNghiepService.updateById(loaiNgheNghiep);
     }
 }

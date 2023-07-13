@@ -1,7 +1,6 @@
 package com.example.ltm.controller;
 
-import com.example.ltm.Service.LoaiNgheNghiepService;
-import com.example.ltm.Service.NgheNghiepService;
+import com.example.ltm.service.NgheNghiepService;
 import com.example.ltm.model.NgheNghiep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,4 +41,10 @@ public class NgheNghiepController {
 //            "id":"1"
 //        }
 //    }]
+
+    @PostMapping("/update-by-id")
+    public void updateNgheNghiepById(NgheNghiep ngheNghiep) {
+        ngheNghiepService.updateById(ngheNghiep);
+    }
+
 }

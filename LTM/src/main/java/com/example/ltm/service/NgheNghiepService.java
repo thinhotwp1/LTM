@@ -1,12 +1,11 @@
-package com.example.ltm.Service;
+package com.example.ltm.service;
 
-import com.example.ltm.Repository.NgheNghiepRepository;
+import com.example.ltm.repository.NgheNghiepRepository;
 import com.example.ltm.model.NgheNghiep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class NgheNghiepService {
@@ -31,4 +30,8 @@ public class NgheNghiepService {
         return ngheNghiepRepository.saveAllAndFlush(list);
     }
 
+    public void updateById(NgheNghiep ngheNghiep) {
+        deleteById(ngheNghiep.getId());
+        ngheNghiepRepository.save(ngheNghiep);
+    }
 }

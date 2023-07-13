@@ -1,6 +1,6 @@
-package com.example.ltm.Service;
+package com.example.ltm.service;
 
-import com.example.ltm.Repository.LoaiNgheNghiepRepository;
+import com.example.ltm.repository.LoaiNgheNghiepRepository;
 import com.example.ltm.model.LoaiNgheNghiep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,5 +29,10 @@ public class LoaiNgheNghiepService {
     public List<LoaiNgheNghiep> saveAll(List<LoaiNgheNghiep> list) {
         return LoaiNgheNghiepRepository.saveAllAndFlush(list);
     }
+    public void updateById(LoaiNgheNghiep loaiNgheNghiep) {
+        deleteById(loaiNgheNghiep.getId());
+        LoaiNgheNghiepRepository.save(loaiNgheNghiep);
+    }
+
 
 }

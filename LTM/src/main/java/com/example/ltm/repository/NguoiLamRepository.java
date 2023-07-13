@@ -1,4 +1,4 @@
-package com.example.ltm.Repository;
+package com.example.ltm.repository;
 import com.example.ltm.model.NguoiLam;
 import org.springframework.data.jpa.repository.JpaRepository;
 

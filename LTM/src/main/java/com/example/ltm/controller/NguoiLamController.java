@@ -1,6 +1,6 @@
 package com.example.ltm.controller;
 
-import com.example.ltm.Service.NguoiLamService;
+import com.example.ltm.service.NguoiLamService;
 import com.example.ltm.model.NguoiLam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,8 +34,13 @@ public class NguoiLamController {
     }
 
     @PostMapping("/save-all")
-    public List<NguoiLam> deleteNguoilamById(@RequestBody List<NguoiLam> list) {
+    public List<NguoiLam> saveNguoilamById(@RequestBody List<NguoiLam> list) {
         return nguoiLamService.saveAll(list);
+    }
+
+    @PostMapping("/update-by-id")
+    public void updateNguoilamById(NguoiLam nguoiLam) {
+         nguoiLamService.updateById(nguoiLam);
     }
 
 }
