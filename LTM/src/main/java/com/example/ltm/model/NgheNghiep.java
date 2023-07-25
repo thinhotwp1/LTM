@@ -20,8 +20,15 @@ public class NgheNghiep {
     @Column(name = "mo_ta")
     private String moTa;
 
-    @ManyToOne
-    @JoinColumn(name = "loainghenghiep_id")
-    private LoaiNgheNghiep loaiNgheNghiep;
+    @Column(name = "loainghenghiep_id")
+    private long loainghenghiep_id;
     // Constructors, getters, setters
+
+
+    public NgheNghiep(String ma, String ten, String moTa, long loainghenghiep_id) {
+        this.ma = ma;
+        this.ten = ten;
+        this.moTa = moTa;
+        this.loainghenghiep_id = loainghenghiep_id;
+    }
 }
